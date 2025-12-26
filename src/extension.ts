@@ -54,12 +54,9 @@ export function activate(context: vscode.ExtensionContext) {
 		// Generate	content based on template
 
 		const rootDir = workspaceFolders[0].uri.fsPath;
-	const filePath = path.join(rootDir, fileName);
 
 	
 
-	context.subscriptions.push(disposable);
-	const ws = new vscode.WorkspaceEdit(); 
 		const content = generateTemplate(fileName, template.value);
 
 		// Get the directory to save the file (use active editor's directory or workspace root)
@@ -95,6 +92,7 @@ export function activate(context: vscode.ExtensionContext) {
 	if (!workspaceFolders) {
 		return;
 	}
+	context.subscriptions.push(disposable);
 
 	
 }
