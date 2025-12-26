@@ -2,7 +2,7 @@
   "name": "typescript-file-maker",
   "displayName": "TypeScript File Maker",
   "description": "Create TypeScript files with proper boilerplate",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.107.0"
   },
@@ -24,7 +24,16 @@
         "command": "typescript-file-maker.createTypeScriptFile",
         "title": "Create TypeScript File"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "typescript-file-maker.createTypeScriptFile",
+          "when": "explorerResourceIsFolder",
+          "group": "typescript"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
