@@ -3,7 +3,7 @@
   "displayName": "TypeScript File Maker",
   "description": "Create TypeScript files with proper boilerplate",
   "publisher": "solopaw",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "engines": {
     "vscode": "^1.107.0"
   },
@@ -22,21 +22,21 @@
   "contributes": {
     "commands": [
       {
-        "command": "typescript-file-maker.createTypeScriptFile",
+        "command": "solopaw.typescript-file-maker.createTypeScriptFile",
         "title": "Create TypeScript File"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "typescript-file-maker.createTypeScriptFile",
+          "command": "solopaw.typescript-file-maker.createTypeScriptFile",
           "when": "foldersViewVisible",
           "group": "typescript@1"
         }
       ],
       "file/newFile": [
         {
-          "command": "typescript-file-maker.createTypeScriptFile"
+          "command": "solopaw.typescript-file-maker.createTypeScriptFile"
         }
       ]
     }
