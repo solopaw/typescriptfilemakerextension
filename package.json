@@ -2,7 +2,7 @@
   "name": "typescript-file-maker",
   "displayName": "TypeScript File Maker",
   "description": "Create TypeScript files with proper boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.107.0"
   },
