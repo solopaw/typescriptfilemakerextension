@@ -2,7 +2,7 @@
   "name": "typescript-file-maker",
   "displayName": "TypeScript File Maker",
   "description": "Create TypeScript files with proper boilerplate",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.107.0"
   },
@@ -10,7 +10,7 @@
     "Other"
   ],
   "repository": {
-    "type":"git",
+    "type": "git",
     "url": "git+https://github.com/solopaw/typescriptfilemakerextension"
   },
   "author": {
@@ -31,6 +31,11 @@
           "command": "typescript-file-maker.createTypeScriptFile",
           "when": "foldersViewVisible",
           "group": "typescript@1"
+        }
+      ],
+      "file/newFile": [
+        {
+          "command": "typescript-file-maker.createTypeScriptFile"
         }
       ]
     }
