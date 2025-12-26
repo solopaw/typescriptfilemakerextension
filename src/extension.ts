@@ -8,6 +8,7 @@ import * as path from 'path';
 export function activate(context: vscode.ExtensionContext) {
 
 	console.log('TypeScript File Maker extension is now active!');
+
 	// Register the command to create a new TypeScript file
 	const disposable = vscode.commands.registerCommand('typescript-file-maker.createTypeScriptFile', async () => {
 		// Get the active workspace folder
@@ -51,12 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 
-		// Generate	content based on template
-
-		const rootDir = workspaceFolders[0].uri.fsPath;
-
-	
-
+		// Generate content based on template
 		const content = generateTemplate(fileName, template.value);
 
 		// Get the directory to save the file (use active editor's directory or workspace root)
@@ -76,9 +72,7 @@ export function activate(context: vscode.ExtensionContext) {
 		edit.createFile(fileUri, { ignoreIfExists: false, contents: Buffer.from(content, 'utf-8') });
 
 		try {
-			const wsedit = new vscode.WorkspaceEdit();
-        wsedit.createFile(fileUri, { ignoreIfExists: true }); // ignoreIfExists: true prevents an error if the file already exists
-        await vscode.workspace.applyEdit(wsedit);
+			await vscode.workspace.applyEdit(edit);
 			// Open the file
 			const document = await vscode.workspace.openTextDocument(fileUri);
 			await vscode.window.showTextDocument(document);
@@ -88,12 +82,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	});
 
-	const workspaceFolders = vscode.workspace.workspaceFolders;
-	if (!workspaceFolders) {
-		return;
-	}
 	context.subscriptions.push(disposable);
-
 	
 }
 
