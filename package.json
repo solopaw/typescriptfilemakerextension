@@ -3,7 +3,7 @@
   "displayName": "TypeScript File Maker",
   "description": "Create TypeScript files with proper boilerplate",
   "publisher": "solopaw",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "engines": {
     "vscode": "^1.107.0"
   },

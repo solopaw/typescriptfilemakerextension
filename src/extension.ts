@@ -65,7 +65,10 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		// Create the file URI
-		const fileUri = vscode.Uri.file(path.join(targetDir.fsPath, `${fileName}.ts`));
+		let fileUri = vscode.Uri.file(path.join(targetDir.fsPath, `${fileName}.ts`));
+		if (template.value === 'react') {
+			fileUri = vscode.Uri.file(path.join(targetDir.fsPath, `${fileName}.tsx`));
+		}
 
 		// Create the file using WorkspaceEdit
 		const edit = new vscode.WorkspaceEdit();
@@ -83,7 +86,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
-	
+
 }
 
 /**
